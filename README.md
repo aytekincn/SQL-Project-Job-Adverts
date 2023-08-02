@@ -29,3 +29,34 @@ job_id|	job_title|salary_estimate_min|	salary_estimate_max|
 124|	Sales Associate| 100K|	101K|
 128|	Structural Engineer|	22K|	101K|
 138|	Help Desk Operator|	91K|	102K|
+
+#### Write a query to display the company_name, company_rank, company_size_min, and company_size_max
+for companies with more than 60 employees and less than 120 employees
+````sql
+SELECT DISTINCT company_name, company_rank, company_size_min, company_size_max
+FROM jobs
+WHERE REPLACE(company_size_min, ' Employees', '') > 60 AND 
+      REPLACE(company_size_max, ' Employees', '') < 120,
+````
+**Results:**
+company_name|company_rank|company_size_min|company_size_max|
+--------------------|------------------|-----------------------|------------------------|
+Babbleblab|8|70 Employees|119 Employees|
+Babbleopia|8|70 Employees|119 Employees|
+Blognation|8|70 Employees|119 Employees|
+Brainverse|8|70 Employees|119 Employees|
+Brightbean|8|	70 Employees|119 Employees|
+Browseblab|8|	70 Employees|119 Employees|
+Browsetype|8|	70 Employees|119 Employees|
+Bubbletube|8|	70 Employees|119 Employees|
+Divanoodle|8|	70 Employees|119 Employees|
+Feednation|8|70 Employees|	119 Employees|
+Flashpoint|8|	70 Employees|	119 Employees|
+Jabberbean|8|	70 Employees|	119 Employees|
+Linkbridge|8|	70 Employees|	119 Employees|
+Photospace|8|	70 Employees|	119 Employees|
+Shuffletag|8|	70 Employees|	119 Employees|
+Thoughtmix|8|	70 Employees|	119 Employees|
+Topicshots|8|70 Employees|119 Employees|
+Topicstorm|8|	70 Employees|	119 Employees|
+Zoomlounge|8|70 Employees|	119 Employees|
