@@ -60,3 +60,26 @@ Thoughtmix|8|	70 Employees|	119 Employees|
 Topicshots|8|70 Employees|119 Employees|
 Topicstorm|8|	70 Employees|	119 Employees|
 Zoomlounge|8|70 Employees|	119 Employees|
+
+
+#### Write a query to display the :
+#### a. job_id
+#### b. job_title in uppercase
+#### c. company_name in lowercase
+````sql
+SELECT TOP 10 job_id, UPPER(job_title) AS 'upper_jobtitle', LOWER(company_name) AS 'lower_companyname'
+FROM jobs
+````
+**Results:**
+job_id|	upper_jobtitle|	lower_companyname|	
+-------|-------------------|----------------------------|	
+1|ADMİNİSTRATİVE ASSİSTANT II|kwilith|	
+2|SOFTWARE ENGİNEER II|photojam|	
+3|PHYSİCAL THERAPY ASSİSTANT|gabvine|	
+4|RESEARCH ASSİSTANT I|lajo|	
+5|ASSİSTANT PROFESSOR|avaveo|	
+6|DATABASE ADMİNİSTRATOR II|brainverse|	
+7|ACCOUNT COORDİNATOR|linklinks|	
+8|ASSOCİATE PROFESSOR|tazzy|	
+9|BUDGET/ACCOUNTİNG ANALYST IV|wikizz|	
+10|DATABASE ADMİNİSTRATOR I|linktype|	
