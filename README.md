@@ -83,3 +83,30 @@ job_id|	upper_jobtitle|	lower_companyname|
 8|ASSOCİATE PROFESSOR|tazzy|	
 9|BUDGET/ACCOUNTİNG ANALYST IV|wikizz|	
 10|DATABASE ADMİNİSTRATOR I|linktype|	
+
+
+#### Write a query to display the job_id, job_title, published_date, and removed_date for all jobs that were published on 2016
+````sql
+SELECT TOP 15 job_id, job_title, published_date, removed_date 
+FROM jobs
+WHERE YEAR(published_date) = 2016
+````
+**Results:**	
+
+job_id|job_title|published_date|removed_date|
+------|---------|--------------|------------|	
+3|Physical Therapy Assistant|2016-10-14 10:24:03.000|2016-12-18 10:24:03.000|
+4|Research Assistant I|2016-11-14 04:18:12.000|2017-01-21 04:18:12.000|
+8|Associate Professor|2016-05-03 02:56:17.000|2016-07-03 02:56:17.000|
+12|NULL|2016-10-13 17:47:31.000|2016-12-14 17:47:31.000|
+17|Systems Administrator III|2016-03-10 15:56:12.000|2016-05-05 15:56:12.000|
+20|Account Representative III|2016-10-25 16:43:40.000|2017-02-02 16:43:40.000|
+26|Food Chemist|2016-08-29 07:19:20.000|2016-12-03 07:19:20.000|
+35|Help Desk Technician|2016-04-11 08:05:27.000|2016-05-03 08:05:27.000|
+53|Associate Professor|2016-03-23 |11:40:52.000|2016-06-02 11:40:52.000|
+66|Physical Therapy Assistant|2016-08-20 00:59:38.000|2016-10-25 00:59:38.000|
+73|Senior Sales Associate|2016-06-04 21:00:42.000|2016-08-17 21:00:42.000|
+76|Sales Associate|2016-09-05 13:02:45.000|2016-10-31 13:02:45.000|
+77|Programmer Analyst IV|2016-08-24 08:44:17.000|2016-10-26 08:44:17.000|
+86|Database Administrator II|2016-02-11 12:49:37.000|2016-03-07 12:49:37.000|
+87|Design Engineer|2016-05-24 08:32:27.000|2016-08-11 08:32:27.000|
