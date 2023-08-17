@@ -125,3 +125,37 @@ job_id|job_title|published_date|removed_date|
 560|Occupational Therapist|2016-06-20 18:54:55.000|2016-06-21|18:54:55.000|
 723|Civil Engineer|2017-01-17 17:33:49.000|2017-01-18 17:33:49.000|
 923|Quality Engineer|2017-05-21 02:45:17.000|2017-05-22 02:45:17.000|
+
+
+
+#### Which job adverts were posted on the same day and month as the current date ?
+````sql
+SELECT job_id, job_title, published_date, removed_date
+FROM jobs
+WHERE DAY(published_date) = DAY(GETDATE())
+AND   MONTH(published_date) = MONTH(GETDATE())
+````
+job_id|job_title|published_date|removed_date|
+------|---------|--------------|------------|	
+245|Occupational Therapist|2018-08-17 10:53:58.000|2018-10-16 10:53:58.000|
+390|Programmer Analyst III|2017-08-17 15:24:13.000|2017-11-06 15:24:13.000|
+393|Human Resources Manager|2017-08-17 09:25:56.000|2017-10-28 09:25:56.000|
+397|Nuclear Power Engineer|2017-08-17 01:03:36.000|2017-09-07 01:03:36.000|
+
+
+#### Take your previous report and instead of the NULL values:
+#### a. Display the current date instead of NULL values in removed_date
+#### b. Display the company_state instead of NULL values in headquarters_of_company
+#### c. Display 'Not Available' instead of NULL values in company_name
+job_id|job_title|removed_date|headquarters_of_company|company_name|
+--------|--------|-----------|-----------------------|------------|
+3|Physical Therapy Assistant|2016-12-18 10:24:03.000|Colorado|Gabvine
+61|NULL|2018-03-13 14:50:44.000|Colorado|Rhybox|
+364|Nurse Practicioner|2020-12-06 18:14:59.000|Colorado|Mybuzz|
+406|Human Resources Assistant I|2019-07-06 20:40:42.000|Florida|Tambee|
+426|NULL|2016-12-15 01:10:32.000|Florida|Voonyx|
+494|Desktop Support Technician|2019-09-03 04:45:52.000|Colorado|Katz|
+501|Data Coordiator|2020-10-07 02:30:18.000|Colorado|Thoughtmix|
+513|Health Coach I|2018-07-06 18:11:51.000|Florida|Voonix|
+582|Physical Therapy Assistant	|2018-09-11 17:14:33.000|Florida|Skimia|
+632|Geologist III|2023-08-17 11:04:49.587|Akron|Jetwire|
