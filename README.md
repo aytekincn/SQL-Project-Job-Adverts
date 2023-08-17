@@ -110,3 +110,18 @@ job_id|job_title|published_date|removed_date|
 77|Programmer Analyst IV|2016-08-24 08:44:17.000|2016-10-26 08:44:17.000|
 86|Database Administrator II|2016-02-11 12:49:37.000|2016-03-07 12:49:37.000|
 87|Design Engineer|2016-05-24 08:32:27.000|2016-08-11 08:32:27.000|
+
+
+
+#### Which job adverts were removed after a single day ? :
+````sql
+SELECT job_id, job_title, published_date, removed_date
+FROM jobs
+WHERE DATEDIFF(DAY, published_date, removed_date) = 1
+````
+job_id|job_title|published_date|removed_date|
+-------|--------|--------------|------------|	
+264|Senior Editor|2020-01-19 03:28:44.000|2020-01-20 03:28:44.000|
+560|Occupational Therapist|2016-06-20 18:54:55.000|2016-06-21|18:54:55.000|
+723|Civil Engineer|2017-01-17 17:33:49.000|2017-01-18 17:33:49.000|
+923|Quality Engineer|2017-05-21 02:45:17.000|2017-05-22 02:45:17.000|
