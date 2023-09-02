@@ -142,6 +142,18 @@ job_id|job_title|published_date|removed_date|
 393|Human Resources Manager|2017-08-17 09:25:56.000|2017-10-28 09:25:56.000|
 397|Nuclear Power Engineer|2017-08-17 01:03:36.000|2017-09-07 01:03:36.000|
 
+#### In a few job adverts, the value of published_date is greater than the removed_date,  those rows represent invalid data.
+````sql
+SELECT job_id, job_title, published_date, removed_date
+FROM jobs 
+WHERE published_date > removed_date
+````
+job_id|job_title|published_date|removed_date|
+------|---------|--------------|------------|
+410|Account Executive|2017-09-08 05:21:17.000|2016-09-29 05:21:17.000|
+421|VP Product Management|2019-08-06 20:22:45.000|2017-08-30 20:22:45.000|
+431|Electrical Engineer|2021-02-03 08:13:52.000|2018-05-13 08:13:52.000|
+474|Software Consultant|2019-01-17 07:15:18.000|2010-03-10 07:15:18.000|
 
 #### Take your previous report and instead of the NULL values:
 #### a. Display the current date instead of NULL values in removed_date
