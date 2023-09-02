@@ -172,3 +172,4 @@ job_id|job_title|removed_date|headquarters_of_company|company_name|
 513|Health Coach I|2018-07-06 18:11:51.000|Florida|Voonix|
 582|Physical Therapy Assistant	|2018-09-11 17:14:33.000|Florida|Skimia|
 632|Geologist III|2023-08-17 11:04:49.587|Akron|Jetwire|
+
