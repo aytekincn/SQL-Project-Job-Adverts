@@ -148,6 +148,7 @@ SELECT job_id, job_title, published_date, removed_date
 FROM jobs 
 WHERE published_date > removed_date
 ````
+
 job_id|job_title|published_date|removed_date|
 ------|---------|--------------|------------|
 410|Account Executive|2017-09-08 05:21:17.000|2016-09-29 05:21:17.000|
