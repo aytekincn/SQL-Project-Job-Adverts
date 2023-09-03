@@ -160,6 +160,21 @@ job_id|job_title|published_date|removed_date|
 #### a. Display the current date instead of NULL values in removed_date
 #### b. Display the company_state instead of NULL values in headquarters_of_company
 #### c. Display 'Not Available' instead of NULL values in company_name
+
+````sql
+SELECT job_id, job_title,
+
+	ISNULL(removed_date, GETDATE()) AS 'removed_date',
+	ISNULL(headquarters_of_company, state_of_company) AS 'headquarters_of_company',
+	ISNULL(company_name,'Not Available') AS 'company_name'
+
+FROM jobs
+
+WHERE removed_date IS NULL OR
+	  headquarters_of_company  IS NULL OR
+	  company_market_value IS NULL
+````
+
 job_id|job_title|removed_date|headquarters_of_company|company_name|
 --------|--------|-----------|-----------------------|------------|
 3|Physical Therapy Assistant|2016-12-18 10:24:03.000|Colorado|Gabvine
