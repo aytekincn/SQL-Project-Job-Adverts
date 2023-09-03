@@ -188,3 +188,41 @@ job_id|job_title|removed_date|headquarters_of_company|company_name|
 582|Physical Therapy Assistant	|2018-09-11 17:14:33.000|Florida|Skimia|
 632|Geologist III|2023-08-17 11:04:49.587|Akron|Jetwire|
 
+### Write a query to display the company_name, company_market_value, and a new column : company_market_value_rank, based on the following logic:
+
+### For companies with market_value in the range of 0-300 provide the rank : 'low range'
+
+### For companies with market_value in the range of 301-600 provide the rank : 'mid range'
+
+### For companies with market_value in the range of 601-900 provide the rank : 'high range'
+
+### For any other range provide the rank : 'other range'
+
+````sql
+SELECT job_title, company_name, company_size_min, company_size_max, 
+         CASE WHEN REPLACE(company_size_max, ' Employees', '') <= 60 THEN 'Small Company'
+         WHEN REPLACE(company_size_max, ' Employees', '') <=  120 THEN 'Medium Company'
+         WHEN REPLACE(company_size_max, ' Employees', '') <=  180 THEN 'Large Company'
+         ELSE 'Unknown'
+         END AS 'company_size'
+FROM  jobs
+
+````
+job_title|company_name|company_size_min|company_size_max|company_siz|
+---------|------------|----------------|----------------|-----------|
+Administrative Assistant II|Kwilith|40 Employees|68 Employees|Medium Company|
+Software Engineer II|Photojam|50 Employees|85 Employees	Medium Company|
+Physical Therapy Assistant|Gabvine|40 Employees|68 Employees|Medium Company|
+Research Assistant I|Lajo|10 Employees|17 Employees|Small Company|
+Assistant Professor|Avaveo|30 Employees|51 Employees|Small Company|
+Database Administrator II|Brainverse|70 Employees|119 Employees|Medium Company|
+Account Coordinator|Linklinks|60 Employees|102 Employees|Medium Company|
+Associate Professor|Tazzy|20 Employees|34 Employees|Small Company|
+Budget/Accounting Analyst IV|Wikizz|30 Employees|51 Employees|Small Company|
+Database Administrator I|Linktype|50 Employees|85 Employees|Medium Company|
+
+
+
+
+
+
